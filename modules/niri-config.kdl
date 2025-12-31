@@ -118,6 +118,10 @@ binds {
     Mod+Minus { set-column-width "-10%"; }
     Mod+Equal { set-column-width "+10%"; }
     
+    // Window stacking
+    Mod+Shift+C { consume-window-into-column; }
+    Mod+Shift+X { expel-window-from-column; }
+    
     // Monitor focus
     Mod+Comma  { focus-monitor-left; }
     Mod+Period { focus-monitor-right; }

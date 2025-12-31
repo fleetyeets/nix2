@@ -16,10 +16,12 @@
     mcfly       # Enhanced shell history with context-aware search
     mpv
     neovim
+    quickemu
     ripgrep     # Fast grep alternative
     rustdesk-flutter
     socat
     starship    # Cross-shell prompt
+    swtpm
     typst
     vim
     wget

@@ -5,11 +5,12 @@
   programs.niri.enable = true;
 
   # Display manager for Wayland sessions
+  # Note: When using GNOME, GDM is used instead (disable SDDM below)
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
   };
-  # x11
+  # x11 - Note: when using GNOME, services.xserver.enable is set in gnome.nix
   services.xserver.enable = true;
   programs.xwayland.enable = true;
   # Essential Wayland/desktop packages
@@ -48,6 +49,7 @@
   ];
 
   # XDG portal for screen sharing and other desktop integration
+  # Note: xdg.portal is also configured in gnome.nix for GNOME desktop
   xdg.portal = {
     enable = true;
     wlr.enable = true;

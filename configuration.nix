@@ -5,6 +5,11 @@
 { config, pkgs, ... }:
 
 {
+  # Allow insecure packages required by work applications
+  nixpkgs.config.permittedInsecurePackages = [
+    "libsoup-2.74.3"
+  ];
+
   imports =
     [ 
       # Include the results of the hardware scan
@@ -12,10 +17,14 @@
       
       # Modular configuration
       ./modules/desktop.nix
+      ./modules/gnome.nix
       ./modules/hardware.nix
       ./modules/packages.nix
       ./modules/programs.nix
       ./modules/virt.nix
+      #./modules/work.nix; pending citrix fixing workspace dependency
+      ./modules/cybersec-lab.nix
+      ./modules/deskflow.nix
     ];
 
   # Bootloader
@@ -25,6 +34,14 @@
   # Networking
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+
+  # Firewall configuration
+  networking.firewall = {
+    enable = true;
+    # Steam local download transfers
+    allowedTCPPorts = [ 27036 27037 ];
+    allowedUDPPorts = [ 27036 27037 ];
+  };
 
   # Locale and timezone
   time.timeZone = "America/New_York";
