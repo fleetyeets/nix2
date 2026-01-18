@@ -25,9 +25,39 @@
     typst
     vim
     wget
+    wl-clipboard # Wayland clipboard utilities
     zathura
     zoxide      # Smart cd command that learns your patterns
   ];
+
+  # Fonts
+  fonts.packages = with pkgs; [
+    jetbrains-mono
+    roboto
+    source-sans
+  ];
+
+  # Font aliases for template compatibility
+  fonts.fontconfig.localConf = ''
+    <?xml version="1.0"?>
+    <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+    <fontconfig>
+      <alias>
+        <family>jetbrain mono</family>
+        <prefer><family>JetBrains Mono</family></prefer>
+      </alias>
+      <alias>
+        <family>source sans 3</family>
+        <prefer><family>Source Sans 3</family></prefer>
+      </alias>
+    </fontconfig>
+  '';
+
+  # Shell aliases
+  environment.shellAliases = {
+    ts-getclip = "wl-copy";
+    ts-putclip = "wl-paste";
+  };
 
   # User-specific packages
   users.users.a = {

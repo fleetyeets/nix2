@@ -2,15 +2,13 @@
 
 {
   # Enable the GNOME Desktop Environment
-  services.xserver = {
-    enable = true;
-    desktopManager.gnome.enable = true;
-  };
+  services.xserver.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # GDM (GNOME Display Manager)
   # Note: Disabled by default to avoid conflict with SDDM from desktop.nix
   # To use GDM instead of SDDM, enable this and disable SDDM in desktop.nix
-  services.xserver.displayManager.gdm = {
+  services.displayManager.gdm = {
     enable = false;
     wayland = true;
   };
@@ -55,6 +53,7 @@
     gnomeExtensions.vitals
     gnomeExtensions.just-perfection
     gnomeExtensions.user-themes
+    gnomeExtensions.gsnap
     
     # File management
     nautilus

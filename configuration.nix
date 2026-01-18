@@ -5,6 +5,11 @@
 { config, pkgs, ... }:
 
 {
+  # Apply overlays
+  nixpkgs.overlays = [
+    (import ./overlays/gsnap.nix)
+  ];
+
   # Allow insecure packages required by work applications
   nixpkgs.config.permittedInsecurePackages = [
     "libsoup-2.74.3"
@@ -23,8 +28,8 @@
       ./modules/programs.nix
       ./modules/virt.nix
       #./modules/work.nix; pending citrix fixing workspace dependency
-      ./modules/cybersec-lab.nix
-      ./modules/deskflow.nix
+      #./modules/cybersec-lab.nix
+      #./modules/deskflow.nix
     ];
 
   # Bootloader
