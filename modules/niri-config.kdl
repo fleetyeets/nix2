@@ -49,7 +49,6 @@ layout {
 }
 
 // Spawn programs on startup
-spawn-at-startup "waybar"
 spawn-at-startup "mako"
 spawn-at-startup "xwayland-satellite"
 

@@ -43,9 +43,15 @@
   # Firewall configuration
   networking.firewall = {
     enable = true;
-    # Steam local download transfers
-    allowedTCPPorts = [ 27036 27037 ];
-    allowedUDPPorts = [ 27036 27037 ];
+    # Steam local network features (game transfer, Remote Play, In-Home Streaming)
+    allowedTCPPortRanges = [
+      { from = 27015; to = 27030; }
+      { from = 27036; to = 27037; }
+    ];
+    allowedUDPPortRanges = [
+      { from = 27000; to = 27031; }
+      { from = 27036; to = 27036; }
+    ];
   };
 
   # Locale and timezone
