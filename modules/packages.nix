@@ -59,9 +59,9 @@
 
   # Shell aliases
   environment.shellAliases = {
-    cat = "bat";
-    ls = "eza";
-    ll = "eza -l";
+    cat = "bat --style=full";
+    ls = "eza --icons --group-directories-first";
+    ll = "eza --icons --group-directories-first --all";
     replace = "serpl";
     ts-getclip = "wl-copy";
     ts-putclip = "wl-paste";
