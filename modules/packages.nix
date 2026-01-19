@@ -59,7 +59,10 @@
 
   # Shell aliases
   environment.shellAliases = {
-    replace = "serple";
+    cat = "bat";
+    ls = "eza";
+    ll = "eza -l";
+    replace = "serpl";
     ts-getclip = "wl-copy";
     ts-putclip = "wl-paste";
   };

@@ -13,4 +13,16 @@
 
   # Enable Steam
   programs.steam.enable = true;
+
+  # Configure bash with Starship prompt
+  programs.bash = {
+    completion.enable = true;
+    interactiveShellInit = ''
+      # Initialize McFly for enhanced shell history
+      eval "$(mcfly init bash)"
+      
+      # Initialize Starship prompt
+      eval "$(starship init bash)"
+    '';
+  };
 }
