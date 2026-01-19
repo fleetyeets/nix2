@@ -1,0 +1,71 @@
+# Starship prompt configuration with Dracula theme
+
+format = """
+[╭─](purple)\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$fill\
+$cmd_duration\
+$line_break\
+[╰─](purple)$character"""
+
+[fill]
+symbol = " "
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+[username]
+style_user = "cyan bold"
+style_root = "red bold"
+format = "[$user]($style) "
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[@$hostname](bold purple) "
+disabled = false
+
+[directory]
+style = "cyan bold"
+format = "[$path]($style) "
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = " "
+style = "purple bold"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "yellow bold"
+format = "([\\[$all_status$ahead_behind\\]]($style) )"
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[git_state]
+format = "[\\($state( $progress_current of $progress_total)\\)]($style) "
+style = "bright-black"
+
+[cmd_duration]
+min_time = 500
+format = "[$duration](bold yellow)"
+style = "yellow bold"
+
+[time]
+disabled = false
+format = "[$time](bold pink)"
+style = "pink bold"

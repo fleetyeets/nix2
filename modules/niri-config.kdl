@@ -1,4 +1,4 @@
-// Niri configuration with Catppuccin Latte theme
+// Niri configuration with Dracula theme
 environment {
 	DISPLAY ":0"
 }
@@ -16,16 +16,11 @@ input {
     }
 }
 
-// Catppuccin Latte colors
-// Base colors from Catppuccin Latte palette
-// base: #eff1f5, mantle: #e6e9ef, crust: #dce0e8
-// text: #4c4f69, subtext0: #6c6f85, subtext1: #5c5f77
-// surface0: #ccd0da, surface1: #bcc0cc, surface2: #acb0be
-// overlay0: #9ca0b0, overlay1: #8c8fa1, overlay2: #7c7f93
-// blue: #1e66f5, lavender: #7287fd, sapphire: #209fb5
-// sky: #04a5e5, teal: #179299, green: #40a02b
-// yellow: #df8e1d, peach: #fe640b, maroon: #e64553
-// red: #d20f39, mauve: #8839ef, pink: #ea76cb, flamingo: #dd7878, rosewater: #dc8a78
+// Dracula colors
+// Background: #282a36, Current Line: #44475a, Foreground: #f8f8f2
+// Comment: #6272a4, Cyan: #8be9fd, Green: #50fa7b
+// Orange: #ffb86c, Pink: #ff79c6, Purple: #bd93f9
+// Red: #ff5555, Yellow: #f1fa8c
 
 layout {
     gaps 8
@@ -42,14 +37,14 @@ layout {
     
     border {
         width 2
-        active-color "#1e66f5"    // Catppuccin Latte Blue
-        inactive-color "#ccd0da"  // Catppuccin Latte Surface0
+        active-color "#bd93f9"    // Dracula Purple
+        inactive-color "#44475a"  // Dracula Current Line
     }
     
     focus-ring {
         width 3
-        active-color "#1e66f5"    // Catppuccin Latte Blue
-        inactive-color "#9ca0b0"  // Catppuccin Latte Overlay0
+        active-color "#bd93f9"    // Dracula Purple
+        inactive-color "#6272a4"  // Dracula Comment
     }
 }
 
@@ -133,6 +128,6 @@ binds {
     Mod+Shift+E { quit; }
 }
 
-// Catppuccin Latte background
+// Dracula background
 prefer-no-csd
 

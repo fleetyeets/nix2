@@ -55,6 +55,9 @@
     gnomeExtensions.user-themes
     gnomeExtensions.gsnap
     
+    # Dracula theme
+    dracula-theme
+    
     # File management
     nautilus
     file-roller  # Archive manager
@@ -161,21 +164,22 @@
   #   user = "a";
   # };
 
-  # GNOME specific dconf settings (optional - can be customized)
-  # These are examples and can be adjusted per user preference
-  # programs.dconf.profiles.user.databases = [{
-  #   settings = {
-  #     "org/gnome/desktop/interface" = {
-  #       color-scheme = "prefer-dark";
-  #       enable-hot-corners = false;
-  #     };
-  #     "org/gnome/desktop/peripherals/touchpad" = {
-  #       tap-to-click = true;
-  #     };
-  #     "org/gnome/mutter" = {
-  #       edge-tiling = true;
-  #       dynamic-workspaces = true;
-  #     };
-  #   };
-  # }];
+  # GNOME specific dconf settings with Dracula theme
+  programs.dconf.profiles.user.databases = [{
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+        gtk-theme = "Dracula";
+        icon-theme = "Dracula";
+        enable-hot-corners = false;
+      };
+      "org/gnome/desktop/peripherals/touchpad" = {
+        tap-to-click = true;
+      };
+      "org/gnome/mutter" = {
+        edge-tiling = true;
+        dynamic-workspaces = true;
+      };
+    };
+  }];
 }

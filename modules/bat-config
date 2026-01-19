@@ -1,0 +1,5 @@
+# Bat configuration with Dracula theme
+--theme="Dracula"
+--style="numbers,changes,header"
+--italic-text=always
+--paging=auto

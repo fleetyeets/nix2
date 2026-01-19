@@ -20,6 +20,7 @@
     ripgrep     # Fast grep alternative
     rustdesk-flutter
     socat
+    serpl # find AND replace magic
     starship    # Cross-shell prompt
     swtpm
     typst
@@ -35,6 +36,9 @@
     jetbrains-mono
     roboto
     source-sans
+    # Nerd Fonts for icons
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
   ];
 
   # Font aliases for template compatibility
@@ -55,9 +59,36 @@
 
   # Shell aliases
   environment.shellAliases = {
+    replace = "serple";
     ts-getclip = "wl-copy";
     ts-putclip = "wl-paste";
   };
+
+  # Neovim configuration with Dracula theme
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    configure = {
+      customRC = ''
+        " Enable Dracula theme
+        colorscheme dracula
+        
+        " Basic settings
+        set number
+        set relativenumber
+        set expandtab
+        set tabstop=2
+        set shiftwidth=2
+        set smartindent
+      '';
+      packages.myVimPackage = with pkgs.vimPlugins; {
+        start = [ dracula-vim ];
+      };
+    };
+  };
+
+  # Bat is installed via environment.systemPackages
+  # Configuration deployed via environment.etc
 
   # User-specific packages
   users.users.a = {

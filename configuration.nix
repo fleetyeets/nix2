@@ -22,7 +22,7 @@
       
       # Modular configuration
       ./modules/desktop.nix
-      ./modules/gnome.nix
+      #./modules/gnome.nix
       ./modules/hardware.nix
       ./modules/packages.nix
       ./modules/programs.nix
