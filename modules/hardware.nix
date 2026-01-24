@@ -20,6 +20,12 @@
     #media-session.enable = true;
   };
 
+  # Load i2c-dev kernel module for ddcutil
+  boot.kernelModules = [ "i2c-dev" ];
+
+  # Enable ddcutil and configure i2c permissions
+  hardware.i2c.enable = true;
+
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
 

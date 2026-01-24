@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs; [
     alacritty
     bat
+    ddcutil #monitor tools
     eza
     fd          # Fast alternative to find
     fzf         # Fuzzy finder for history/files
@@ -97,7 +98,7 @@
   users.users.a = {
     isNormalUser = true;
     description = "a";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "i2c" ];
     packages = with pkgs; [
       warp-terminal
     ];

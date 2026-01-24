@@ -139,6 +139,9 @@ binds {
     // Screenshots
     Print { spawn "grim" "-g" "$(slurp)" "-"; }
     
+    // Switch monitor input and USB to USB-C
+    Ctrl+Shift+I { spawn "sh" "-c" "ddcutil setvcp 60 0x1b --noverify"; }
+    
     // Exit
     Mod+Shift+E { quit; }
 }
