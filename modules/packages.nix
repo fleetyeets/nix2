@@ -14,16 +14,21 @@
     fzf         # Fuzzy finder for history/files
     gcc
     git
+    grim        # Screenshot tool for Wayland
     mcfly       # Enhanced shell history with context-aware search
     mpv
     neovim
+    obsidian
     quickemu
     ripgrep     # Fast grep alternative
     rustdesk-flutter
+    slurp       # Area selection for Wayland screenshots
     socat
     serpl # find AND replace magic
     starship    # Cross-shell prompt
+    swappy      # Screenshot annotation tool
     swtpm
+    telegram-desktop #collection
     typst
     vim
     wget
@@ -64,6 +69,9 @@
     ls = "eza --icons --group-directories-first";
     ll = "eza --icons --group-directories-first --all";
     replace = "serpl";
+    screenshot = "grim -g \"$(slurp)\" - | swappy -f -";
+    screenshot-full = "grim - | swappy -f -";
+    screenshot-copy = "grim -g \"$(slurp)\" - | wl-copy";
     ts-getclip = "wl-copy";
     ts-putclip = "wl-paste";
   };

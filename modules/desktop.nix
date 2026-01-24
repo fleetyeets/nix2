@@ -67,6 +67,7 @@
   environment.etc."zathurarc".source = ./zathurarc;
   environment.etc."starship.toml".source = ./starship.toml;
   environment.etc."bat-config".source = ./bat-config;
+  environment.etc."swappy-config".source = ./swappy-config;
 
   # Symlink config files to user home directory
   systemd.tmpfiles.rules = [
@@ -79,6 +80,8 @@
     "d /home/a/.config/mako 0755 a users -"
     "d /home/a/.config/zathura 0755 a users -"
     "d /home/a/.config/bat 0755 a users -"
+    "d /home/a/.config/swappy 0755 a users -"
+    "d /home/a/Pictures/Screenshots 0755 a users -"
     # Create symlinks
     "L+ /home/a/.config/niri/config.kdl - - - - /etc/niri-config.kdl"
     "L+ /home/a/.config/waybar/config - - - - /etc/waybar-config.json"
@@ -90,5 +93,6 @@
     "L+ /home/a/.config/zathura/zathurarc - - - - /etc/zathurarc"
     "L+ /home/a/.config/starship.toml - - - - /etc/starship.toml"
     "L+ /home/a/.config/bat/config - - - - /etc/bat-config"
+    "L+ /home/a/.config/swappy/config - - - - /etc/swappy-config"
   ];
 }
