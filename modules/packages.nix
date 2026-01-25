@@ -19,6 +19,7 @@
     mpv
     neovim
     obsidian
+    proxychains
     quickemu
     ripgrep     # Fast grep alternative
     rustdesk-flutter
@@ -29,6 +30,8 @@
     swappy      # Screenshot annotation tool
     swtpm
     telegram-desktop #collection
+    tor-browser
+    tor
     typst
     vim
     wget

@@ -66,6 +66,9 @@
   };
 
   # Firewall rules - block all non-Tor traffic from container
+  # NOTE: Rules are permissive to allow container setup (apt-get)
+  # Once Tor Browser is configured to run entirely via Tor daemon,
+  # these rules can be tightened to only allow Tor ports
   networking.nftables.tables.tor-isolation = {
     family = "inet";
     content = ''
@@ -77,14 +80,25 @@
       }
       
       chain tor_container {
-        # Allow Tor network traffic (9001, 9030, 9050, 9051)
-        tcp dport { 9001, 9030, 9050, 9051 } accept
+        # Allow HTTPS (for apt-get and Tor Browser download)
+        tcp dport 443 accept
         
-        # Allow DNS for initial Tor setup
+        # Allow HTTP (for apt-get)
+        tcp dport 80 accept
+        
+        # Allow Tor network traffic (9001, 9030, 9050, 9051, 9150)
+        tcp dport { 9001, 9030, 9050, 9051, 9150 } accept
+        
+        # Allow DNS
         udp dport 53 accept
+        tcp dport 53 accept
         
         # Allow established/related connections
         ct state { established, related } accept
+        
+        # Allow ICMP (for network diagnostics)
+        ip protocol icmp accept
+        icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, echo-request, echo-reply } accept
         
         # Block everything else
         reject
