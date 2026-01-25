@@ -50,6 +50,7 @@ This is a modular NixOS configuration split across specialized files:
 - **`modules/packages.nix`**: System packages and user `a` configuration; sets `allowUnfree = true`
 - **`modules/programs.nix`**: Pre-configured programs (Firefox, Steam)
 - **`modules/virt.nix`**: Virtualization with libvirt/KVM for QEMU VMs
+- **`modules/tor-browser-lxc.nix`**: Isolated Tor Browser in Incus container with network restrictions (see `modules/README-TOR-BROWSER.md`)
 
 ### Desktop Environment
 Uses **Niri** (scrollable-tiling Wayland compositor) instead of traditional DEs. The desktop stack includes:

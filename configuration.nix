@@ -27,6 +27,7 @@
       ./modules/packages.nix
       ./modules/programs.nix
       ./modules/virt.nix
+      ./modules/tor-browser-lxc.nix
       #./modules/work.nix; pending citrix fixing workspace dependency
       #./modules/cybersec-lab.nix
       #./modules/deskflow.nix
