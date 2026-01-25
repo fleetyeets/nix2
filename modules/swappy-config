@@ -1,0 +1,26 @@
+[Default]
+save_dir=$HOME/Pictures/Screenshots
+save_filename_format=screenshot-%Y%m%d-%H%M%S.png
+show_panel=true
+line_size=5
+text_size=20
+text_font=JetBrains Mono
+
+# Dracula color scheme
+early_exit=false
+fill_shape=false
+auto_save=false
+paint_mode=brush
+
+# Dracula colors (RGB values)
+# Background: #282a36
+# Foreground: #f8f8f2
+# Selection: #44475a
+# Comment: #6272a4
+# Red: #ff5555
+# Orange: #ffb86c
+# Yellow: #f1fa8c
+# Green: #50fa7b
+# Purple: #bd93f9
+# Cyan: #8be9fd
+# Pink: #ff79c6
