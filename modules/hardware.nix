@@ -18,6 +18,24 @@
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
+    
+    # Configure WirePlumber to set NVIDIA HDMI/DP (monitor) as default sink
+    wireplumber.configPackages = [
+      (pkgs.writeTextDir "share/wireplumber/main.lua.d/51-default-sink.lua" ''
+        -- Set NVIDIA HDMI/DisplayPort (Dell U4924DW) as default audio sink
+        rule = {
+          matches = {
+            {
+              { "node.name", "matches", "alsa_output.pci-0000_07_00.1.hdmi-stereo*" },
+            },
+          },
+          apply_properties = {
+            ["priority.session"] = 2000,
+          },
+        }
+        table.insert(alsa_monitor.rules, rule)
+      '')
+    ];
   };
 
   # Load i2c-dev kernel module for ddcutil

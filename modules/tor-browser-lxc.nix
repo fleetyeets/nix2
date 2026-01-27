@@ -80,6 +80,10 @@
       }
       
       chain tor_container {
+        # Only restrict traffic FROM containers (source is container subnet)
+        ip saddr != 10.137.170.0/24 accept
+        ip6 saddr != fd42:f064:8f16:2f80::/64 accept
+        
         # Allow HTTPS (for apt-get and Tor Browser download)
         tcp dport 443 accept
         
@@ -100,7 +104,7 @@
         ip protocol icmp accept
         icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, echo-request, echo-reply } accept
         
-        # Block everything else
+        # Block everything else from containers
         reject
       }
     '';

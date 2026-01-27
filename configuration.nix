@@ -15,6 +15,8 @@
     "libsoup-2.74.3"
   ];
 
+  services.tor.enable = true;
+
   imports =
     [ 
       # Include the results of the hardware scan
